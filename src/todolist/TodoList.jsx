@@ -7,7 +7,7 @@ class TodoList extends Component {
     }
     handleReceiveKeyWords(keywords) {
         this.setState({
-            keywords: keywords
+            keywords
         })
     }
     render() {
