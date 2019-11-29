@@ -3,8 +3,15 @@ import Form from './Form'
 import List from './List'
 class TodoList extends Component {
     state = {
-        keywords: ''
+        keywords: '',
+        initValue:'sj'
     }
+    componentDidMount(){
+        this.setState({
+            initValue:'-xmz'
+        })
+    }
+    //vue中有三种状态来源｛data、vuex、props｝
     handleReceiveKeyWords(keywords) {
         this.setState({
             keywords
@@ -18,7 +25,7 @@ class TodoList extends Component {
             <List
                 keywords={this.state.keywords}
             >
-                <div>I am this.props.children</div>
+                <div form={<Form/>}>I am this.props.children</div>
             </List>
         </>
     }
