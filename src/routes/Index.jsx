@@ -4,9 +4,16 @@ import Movie from './Movie';
 import Page404 from './Page404'
 import RRF from './RRF'
 import RouteChildren from './RouteChildren'
+import ReactArray from '../pages/reactFirst'
+import Parent from '../life_times/Parent'
+import ContextParent from '../context/ContextParent'
 import { Route, Switch, Redirect, Link, NavLink } from 'react-router-dom'
-
+import HOC from '../HighOrderComponent/HOC'
+import Hoc from '../enhancer/Hoc.jsx'
+import BrandJson from '../maoyan/BrandJson'
+import ComposeApply from '../enhancer/ComposeApply'
 import './route.css'
+import RenderProps from '../enhancer/RenderProps';
 export default class Index extends Component {
     render() {
         return (
@@ -14,8 +21,18 @@ export default class Index extends Component {
                 <ul>
                     <li><Link to="/movie">movie</Link></li>
                     <li><Link to="/tv">tv</Link></li>
+                    <li><Link to="/react-array">react-array</Link></li>
+                    <li><Link to="/context">context</Link></li>
+                    <li><Link to="/hoc">HighOrderComponent</Link></li>
+                    <li><Link to="/composeApply">enhancer</Link></li>
+                    <li><Link to="/enhancer-hoc">enhancer - hoc</Link></li>
+                    <li><Link to="/enhancer-props">enhancer - renderprops</Link></li>
+                    <li><Link to="/brand-json">BrandJson</Link></li>
                 </ul>
                 <ul>
+                    <li>
+                        <NavLink activeClassName="fz-32" to="/old-life-cycle">oldLifeCycle</NavLink>
+                    </li>
                     <li>
                         <NavLink activeClassName="fz-32" to="/movie">movie</NavLink>
                     </li>
@@ -31,6 +48,30 @@ export default class Index extends Component {
                 </ul>
                 <Switch>
                     <Route
+                        path="/brand-json"
+                        component={BrandJson}
+                    />
+                    <Route
+                        path="/react-array"
+                        component={ReactArray}
+                    />
+                    <Route
+                        path="/enhancer-props"
+                        component={RenderProps}
+                    />
+                    <Route
+                        path="/enhancer-hoc"
+                        component={Hoc}
+                    />
+                    <Route
+                        path="/context"
+                        component={ContextParent}
+                    />
+                    <Route
+                        path="/composeApply"
+                        component={ComposeApply}
+                    />
+                    <Route
                         path="/movie"
                         component={Movie}
                     />
@@ -42,6 +83,14 @@ export default class Index extends Component {
                             return <div>我是renderItem</div>
                         }}
                     />
+                    <Route
+                        path="/hoc"
+                        component={HOC}
+                    />
+                    <Route
+                        path="/old-life-cycle"
+                        component={Parent}
+                    ></Route>
                     <Route
                         path="/rrf"
                         render={(props) => {
@@ -63,7 +112,7 @@ export default class Index extends Component {
                 <Route
                     path="/routeChildren"
                     children={(props) => {
-                        console.log(props)
+                        // console.log(props)
                         return <RouteChildren {...props}></RouteChildren>
                     }}
                 />

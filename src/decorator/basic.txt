@@ -1,0 +1,23 @@
+Decorator 装饰器 是es2015之后新增的语法
+主要是用来修饰 class，以及类方法
+装饰器是一个函数，是一个对类进行处理的函数。装饰器函数的第一个参数，就是所要装饰的目标类。
+
+function connect(target){
+    target.proptype.$abc = 'a'
+}
+
+@connect
+class Text extends Component {
+    render() {
+        console.log(this.props)
+        return (
+            <div> test </div>
+        )
+    }
+}
+
+@autobind装饰器使得方法中的this对象，绑定原始对象
+@readonly装饰器使得属性或方法不可写
+注：凡是遇到传参传不了首先应该想到 函数柯里化
+    函数柯里化 是 高阶函数 的一个特殊用法 
+    是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。

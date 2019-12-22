@@ -1,4 +1,5 @@
-import React, { Component, PureComponent } from 'react'
+import React, { Component } from 'react'
+//PureComponent
 //PureComponent 纯组件，自动优化，只是浅层次比较
 /*对于同步的状态改变，是可以放在componentWillMount，
 对于异步的，最好好放在componentDidMount。
@@ -25,6 +26,9 @@ export default class Children extends Component {
     }
     UNSAFE_componentWillReceiveProps() {
         console.log('componentWillReceivePorps')
+    }
+    shouldComponentUpdate(){
+        console.log('shouldComponentUpdate')
     }
     UNSAFE_componentWillUpdate() {
         console.log('componentWillUpdate');
