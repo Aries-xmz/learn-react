@@ -6,15 +6,21 @@ class Hoc extends Component {
         title: 'o_O -> _ <-'
     }
 
+    state={
+        title:'hoc change'
+    }
+
     handleClick=(title)=>() => {
-        console.log(this)
+        this.setState({
+            title
+        })
     }
     
 
     render() {
         return (
             <div>
-                {this.props.title}
+                {this.props.title} - { this.state.title }
                 <button onClick={this.handleClick('cao ni ma')}>change title</button>
             </div>
         )

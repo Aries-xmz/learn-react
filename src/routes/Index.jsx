@@ -18,7 +18,7 @@ export default class Index extends Component {
     render() {
         return (
             <>
-                <ul>
+                {/* <ul>
                     <li><Link to="/movie">movie</Link></li>
                     <li><Link to="/tv">tv</Link></li>
                     <li><Link to="/react-array">react-array</Link></li>
@@ -28,7 +28,7 @@ export default class Index extends Component {
                     <li><Link to="/enhancer-hoc">enhancer - hoc</Link></li>
                     <li><Link to="/enhancer-props">enhancer - renderprops</Link></li>
                     <li><Link to="/brand-json">BrandJson</Link></li>
-                </ul>
+                </ul> */}
                 <ul>
                     <li>
                         <NavLink activeClassName="fz-32" to="/old-life-cycle">oldLifeCycle</NavLink>
